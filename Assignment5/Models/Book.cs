@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Assignment5.Models
 {
+    //class for book entries
     public class Book
     {
+        //making BookID public key
         [Key] 
         public int BookId { get; set; }
         public string Title { get; set; }

@@ -12,6 +12,7 @@ namespace Assignment5.Models
         {
 
         }
+        //get and set database entries
         public DbSet<Book> Books { get; set; }
     }
 }

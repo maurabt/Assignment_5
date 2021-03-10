@@ -6,6 +6,7 @@ namespace Assignment5.Models
     {
         public string RequestId { get; set; }
 
+        //when variable is null / empty upon request
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
 }

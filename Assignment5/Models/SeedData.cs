@@ -13,14 +13,16 @@ namespace Assignment5.Models
         public static void EnsurePopulated (IApplicationBuilder application)
         {
             BookDbContext context = application.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<BookDbContext>();
-            
+            //migrate when migrations are pending
             if (context.Database.GetPendingMigrations().Any())
             {
                 context.Database.Migrate();
             }
+            //when there are no books added yet
             if (!context.Books.Any())
             {
                 context.Books.AddRange(
+                    //typed out data entries for book database
                     new Book
                     {
                         Title = "Les Miserables",
@@ -112,7 +114,7 @@ namespace Assignment5.Models
                         Price = "15.03"
                     }
                 );
-
+                //saving edits to seeds
                 context.SaveChanges();
             }
         }

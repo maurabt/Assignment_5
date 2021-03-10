@@ -5,18 +5,23 @@
 @model IQueryable<Book>
 
 <header>
-    <h1 class="display-4">Bookstore Database</h1>
+    <!--css styling and page header-->
+    <h1 class="display-4" style="background-color:darkslateblue; padding:20px; color:white; text-align:center">Bookstore Database</h1>
 </header>
 
+<!--loop through each data entry and print variables-->
 @foreach (var x in Model)
 {
-    <div>
-        <p></p>
-        <h3>@x.Title</h3>
-        <h5>By @x.Author</h5>
-        <p>$@x.Price</p>
-        <p>Published by @x.Publisher; ISBN: 978-@x.ISBN</p>
-        <p>Classification/Category: @x.Class</p>
-    
-    </div>
+<div style="padding:20px; background-color:antiquewhite; color:darkslateblue">
+    <p></p>
+    <!--css addition-->
+    <hr style="border-width:2px; text-align:left; color:darkslateblue" />
+
+    <h3>@x.Title</h3>
+    <h5>By @x.Author</h5>
+    <p>$@x.Price</p>
+    <p>Published by @x.Publisher; ISBN: 978-@x.ISBN</p>
+    <p>Classification/Category: @x.Class</p>
+
+</div>
 } 
